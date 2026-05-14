@@ -1,0 +1,56 @@
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+header {
+  display: flex;
+  background-color: rgb(53, 53, 68);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 2rem;
+
+  background: #615959;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background-color: rgb(55, 75, 110);
+  color: cadetblue;
+  transition: background 0.2s ease;
+}
+
+nav ul li a:hover {
+  background-color: rgb(75, 100, 148);
+}
+
+.btn {
+  padding: 5px 15px;
+  background-color: #0f31ac;
+  border-radius: 5px;
+  border: solid 2px rgb(0, 102, 255);
+}
+
+Link {
+  color: aqua;
+}

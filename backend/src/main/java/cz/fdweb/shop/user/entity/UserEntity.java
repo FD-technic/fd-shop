@@ -1,17 +1,19 @@
-package cz.fdweb.shop.product.entity;
+package cz.fdweb.shop.user.entity;
 
+import cz.fdweb.shop.address.entity.AddressEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name = "products")
+@Table(name = "users")
 @Getter
 @Setter
-public class ProductEntity {
+public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,14 +22,14 @@ public class ProductEntity {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
-    private String description;
+    @OneToMany(mappedBy = "user")
+    private List<AddressEntity> addresses = new ArrayList<>();
 
     @Column(nullable = false)
-    private BigDecimal price;
+    private String phone;
 
     @Column(nullable = false)
-    private Integer stockQuantity;
+    private String mail;
 
     @Column(nullable = false)
     private boolean hidden;

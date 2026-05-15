@@ -1,33 +1,36 @@
-package cz.fdweb.shop.product.entity;
+package cz.fdweb.shop.address.entity;
 
+import cz.fdweb.shop.user.entity.UserEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "products")
+@Table(name = "addresses")
 @Getter
 @Setter
-public class ProductEntity {
+public class AddressEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String name;
+    private String street;
 
     @Column(nullable = false)
-    private String description;
+    private String city;
 
     @Column(nullable = false)
-    private BigDecimal price;
+    private String zip;
 
     @Column(nullable = false)
-    private Integer stockQuantity;
+    private String country;
+
+    @ManyToOne
+    private UserEntity user;
 
     @Column(nullable = false)
     private boolean hidden;

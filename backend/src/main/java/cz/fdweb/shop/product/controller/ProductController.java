@@ -26,7 +26,6 @@ public class ProductController {
 
     @GetMapping
     public Page<ProductDTO> findProducts(@ModelAttribute ProductFilter filter) {
-
         Pageable pageable = PageRequest.of(filter.getPage(), filter.getPageSize());
 
         return productService.findProducts(filter, pageable);
@@ -43,7 +42,7 @@ public class ProductController {
     }
 
     @DeleteMapping("/{productId}")
-    public ProductDTO removePerson(@PathVariable Long productId) {
+    public ProductDTO removeProduct(@PathVariable Long productId) {
         return productService.removeProduct(productId);
     }
 }
